@@ -30,8 +30,9 @@ export class CarDetailsComponent implements OnInit {
       cost: this.newCost
     });
     localStorage.setItem('cars', JSON.stringify([this.car]));
+    console.log('Stored cars:', localStorage.getItem('cars'));
     this.newPart = '';
     this.newCost = this.newCost ?? 0;
-
   }
+  
 }

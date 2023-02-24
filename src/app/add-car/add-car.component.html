@@ -1,0 +1,13 @@
+<form (submit)="addCar()">
+    <div>
+      <label>Make:</label>
+      <input type="text" name="make" [(ngModel)]="make" required>
+
+    </div>
+    <div>
+      <label>Model:</label>
+      <input type="text" [(ngModel)]="model" required>
+    </div>
+    <button type="submit">Add Car</button>
+  </form>
+  

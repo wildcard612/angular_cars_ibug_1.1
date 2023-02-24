@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AddCarComponent } from './add-car/add-car.component';
+
 
 @Component({
   selector: 'app-root',
