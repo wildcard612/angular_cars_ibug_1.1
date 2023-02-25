@@ -16,11 +16,9 @@ export class AddCarComponent {
 
   addCar() {
     const newCar = { make: this.make, model: this.model };
-    console.log(newCar); // sprawdzenie wartości zmiennej newCar
     const cars = JSON.parse(localStorage.getItem('cars') || '[]');
     cars.push(newCar);
     localStorage.setItem('cars', JSON.stringify(cars));
-    console.log(localStorage.getItem('cars')); // sprawdzenie wartości zapisanych w localStorage
     this.make = '';
     this.model = '';
   }

@@ -5,20 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './car-details.component.html',
   styleUrls: ['./car-details.component.css']
 })
-
 export class CarDetailsComponent implements OnInit {
 
   car: any;
   newPart: string;
   newCost: number;
+  services: any[] = [];
 
   constructor() {
     this.newPart = '';
     this.newCost = 0;
-  }  
+  }
 
   ngOnInit(): void {
     this.car = JSON.parse(localStorage.getItem('selectedCar') || '{}');
+    this.services = this.car.services || [];
   }
 
   addService() {
@@ -29,10 +30,10 @@ export class CarDetailsComponent implements OnInit {
       part: this.newPart,
       cost: this.newCost
     });
-    localStorage.setItem('cars', JSON.stringify([this.car]));
-    console.log('Stored cars:', localStorage.getItem('cars'));
+    localStorage.setItem('selectedCar', JSON.stringify(this.car));
+    this.services = this.car.services;
     this.newPart = '';
-    this.newCost = this.newCost ?? 0;
+    this.newCost = 0;
   }
-  
+
 }
