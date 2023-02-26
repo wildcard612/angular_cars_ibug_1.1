@@ -3,13 +3,12 @@
     <div class="col-md-4">
       <h3>Cars</h3>
       <ul class="list-group">
-        <li *ngFor="let car of cars" (click)="selectCar(car)" class="list-group-item">{{car.make}} {{car.model}}</li>
+        <a *ngFor="let car of cars" [routerLink]="['/car-details', car.id]" class="list-group-item">{{car.make}} {{car.model}}</a>
       </ul>
+      <app-add-car></app-add-car>
     </div>
     <div class="col-md-8">
-      <h3>Car Details</h3>
-      <app-car-details></app-car-details>
-      <app-add-car></app-add-car>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
